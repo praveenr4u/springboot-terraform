@@ -43,6 +43,13 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+
+      - name: Build with Maven
+        uses: maven/setup-java@v1
+        with:
+          java-version: 8
+          run: mvn clean install
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
