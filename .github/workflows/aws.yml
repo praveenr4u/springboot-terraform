@@ -9,6 +9,7 @@ on:
       - main
 
 env:
+  IMAGE_TAG: latest
   AWS_REGION: us-east-2
   ECS_CLUSTER: app_cluster
   ECR_REPOSITORY: app_repo
