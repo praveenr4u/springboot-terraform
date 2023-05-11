@@ -3,6 +3,8 @@ on:
    pull_request:
      branches:
       - main
+     paths:
+        - 'springboot-app/**'
 
 env:
   AWS_REGION: us-east-2
