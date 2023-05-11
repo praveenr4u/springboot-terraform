@@ -1,4 +1,4 @@
-name: Deploy to Amazon ECS
+name: Deploy spring boot to Amazon ECS
 on:
    pull_request:
      branches:
