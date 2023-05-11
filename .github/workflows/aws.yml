@@ -3,6 +3,8 @@ on:
    pull_request:
      branches:
       - main
+     paths:
+          - 'springboot-app/**'
 
 env:
   AWS_REGION: us-east-2
@@ -10,6 +12,13 @@ env:
   CONTAINER_NAME: app
   ECS_SERVICE: app_service
   ECS_TD: .github/workflows/td.json
+
+
+defaults:
+  run:
+    working-directory: ./springboot-app
+
+
 
 jobs:
   deploy:
@@ -38,7 +47,7 @@ jobs:
           ECR_REPOSITORY: "app_repo"
           IMAGE_TAG: latest
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f /Users/pramachandran/Documents/GIT/springboot-terraform/springboot-app/Dockerfile .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
