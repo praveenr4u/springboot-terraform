@@ -19,5 +19,13 @@
 - terraform plan
 - terraform apply
 
+### access & secret keys
+
+- IAM > users > xyzuser > create access key
+
+### Task definition 
+
+-  ECS > task definition
+
 
 
