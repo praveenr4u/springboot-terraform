@@ -43,11 +43,17 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+      - name: Set up JDK 11
+        id: setup-jdk
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '11'
 
       - name: Build with Maven
         uses: maven/setup-java@v1
         with:
-          java-version: 8
+          java-version: 11
           run: mvn clean install
 
       - name: Build, tag, and push image to Amazon ECR
