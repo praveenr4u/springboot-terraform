@@ -52,10 +52,10 @@ jobs:
 
       - name: Checkout and Prepare Step
         uses: devonfw-actions/java-maven-setup@v8
-
         with:
           java-version: 11
-          run: mvn clean install
+          run: |
+           mvn clean install
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
