@@ -1,4 +1,5 @@
 FROM openjdk:8
 EXPOSE 8080
-ADD ./springboot-app/target/springboot-k8s-demo.jar springboot-k8s-demo.jar
-ENTRYPOINT ["java","-jar","/springboot-k8s-demo.jar"]
+#ADD target/springboot-app.jar springboot-app.jar
+COPY target/springboot-app.jar springboot-app.jar
+ENTRYPOINT ["java","-jar","/springboot-app.jar"]

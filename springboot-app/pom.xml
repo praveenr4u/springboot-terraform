@@ -11,7 +11,7 @@
 	<groupId>com.javatechie</groupId>
 	<artifactId>springboot-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-k8s-demo</name>
+	<name>springboot-app</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -36,7 +36,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>springboot-k8s-demo</finalName>
+		<finalName>springboot-app</finalName>
 	</build>
 
 </project>
