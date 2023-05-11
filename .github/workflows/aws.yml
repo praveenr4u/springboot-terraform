@@ -50,8 +50,9 @@ jobs:
           distribution: 'corretto'
           java-version: '11'
 
-      - name: Build with Maven
-        uses: maven/setup-java@v2
+      - name: Checkout and Prepare Step
+        uses: devonfw-actions/java-maven-setup@v8
+
         with:
           java-version: 11
           run: mvn clean install
