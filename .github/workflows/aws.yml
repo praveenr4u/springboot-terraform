@@ -66,7 +66,7 @@ jobs:
           tags: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
           build-args: |
             - ECR_REGISTRY=${{ env.ECR_REGISTRY }}
-            - ECR_REPOSITORY=${{ c.ECR_REPOSITORY }}
+            - ECR_REPOSITORY=${{ env.ECR_REPOSITORY }}
             - IMAGE_TAG=${{env.IMAGE_TAG}}
             echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
