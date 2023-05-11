@@ -11,5 +11,4 @@ ARG JAR_FILE=target/*.jar
 
 COPY ./springboot-app/target/springboot-app.jar app.jar
 
-
 ENTRYPOINT ["java","-jar","/app.jar"]
